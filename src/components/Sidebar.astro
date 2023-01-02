@@ -1,5 +1,8 @@
 ---
+import HeaderNavigation from "./HeaderNavigation.astro";
 import LockDay from "./LockDay.astro";
+import "../assets/css/style.css";
+import Footer from "./Footer.astro";
 interface Item {
   title: String;
   link: String;
@@ -11,20 +14,21 @@ interface Link {
   url: Text;
 }
 
+const { navItems, customLinks, logoText } = Astro.props;
 
-const { navItems, customLinks } = Astro.props;
 ---
 
 <section class="sidebar">
-  <h1>Learn the Web Notes</h1>
+  <h1>{logoText}</h1>
 
+  <HeaderNavigation />
   <nav>
     <ul>
       <li><small>Navigation</small></li>
       {
         navItems.map((item: Item) => {
           return (
-            <li>
+            <li class="nav-item">
               <a
                 href={
                   Astro.request.url.split("/")[3] == "notes"
@@ -32,88 +36,30 @@ const { navItems, customLinks } = Astro.props;
                     : item.frontmatter.slug
                 }
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                  height="18"
-                  width="18"
-                >
-                  <>
-                    <path
-                      fill="#67befa"
-                      d="M6.33085 1.68814C6.19256 1.31474 5.84595 1.05805 5.44818 1.03995C4.01149 0.974562 3.1447 0.992082 1.99195 1.07324C1.51033 1.10715 1.12739 1.48675 1.07228 1.9664C0.734905 4.90279 0.622978 7.84939 0.974421 10.7925C1.09368 11.7912 1.91145 12.5171 2.88977 12.6236C5.65225 12.9244 8.37501 12.9167 11.1373 12.616C12.0973 12.5115 12.8679 11.7513 12.9824 10.7925C13.1996 8.97355 13.2575 7.10899 13.1223 4.82187C13.0662 3.87434 12.3232 3.11183 11.3773 3.03351C10.0328 2.92221 9.0983 2.91583 7.44587 2.88087C7.03639 2.8722 6.67355 2.61353 6.53131 2.22945L6.33085 1.68814Z"
-                    />
-                    <path
-                      stroke="#034dca"
-                      stroke-linejoin="round"
-                      d="M6.33085 1.68814C6.19256 1.31474 5.84595 1.05805 5.44818 1.03995C4.01149 0.974562 3.1447 0.992082 1.99195 1.07324C1.51033 1.10715 1.12739 1.48675 1.07228 1.9664C0.734905 4.90279 0.622978 7.84939 0.974421 10.7925C1.09368 11.7912 1.91145 12.5171 2.88977 12.6236C5.65225 12.9244 8.37501 12.9167 11.1373 12.616C12.0973 12.5115 12.8679 11.7513 12.9824 10.7925C13.1996 8.97355 13.2575 7.10899 13.1223 4.82187C13.0662 3.87434 12.3232 3.11183 11.3773 3.03351C10.0328 2.92221 9.0983 2.91583 7.44587 2.88087C7.03639 2.8722 6.67355 2.61353 6.53131 2.22945L6.33085 1.68814Z"
-                    />
-                  </>
-                </svg>
                 {item.frontmatter.title}
               </a>
             </li>
           );
         })
       }
-
+      <!-- 
       {
-        customLinks
-          ? customLinks.map((link: Link) => {
-              return (
-                <li>
-                  <a>{link.text}</a>
-                </li>
-              );
-            })
-          : "null"
-      }
+        customLinks.map((item) => {
+          return (
+            <li>
+              <a href={item.link}>{item.text}</a>
+            </li>
+          );
+        })
+      } -->
     </ul>
   </nav>
+  <Footer/>
+  
 </section>
 
-<style>
-  section.sidebar {
-    background: #092033;
-    padding: 1rem;
-    width: 20rem;
-    min-height: 100vh;
-    position: relative;
-  }
 
-  section.sidebar small {
-    color: #fff;
-    font-weight: 100;
-    text-transform: uppercase;
-  }
+<script>
+  const 
+</script>
 
-  section.sidebar h1 {
-    color: #fff;
-    font-size: min(1rem, 5vw);
-    font-weight: 300;
-    margin: 0;
-  }
-
-  section.sidebar nav {
-    margin-top: 2rem;
-  }
-
-  section.sidebar nav ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  section ul li {
-    list-style: none;
-    margin: 1rem 0;
-  }
-
-  section ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: min(0.85rem, 5vw);
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-</style>

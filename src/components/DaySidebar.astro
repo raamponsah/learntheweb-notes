@@ -1,19 +1,23 @@
 ---
+import FileIcon from "./FileIcon.astro";
 import FolderIcon from "./FolderIcon.astro";
+import HeaderNavigation from "./HeaderNavigation.astro";
 import LockDay from "./LockDay.astro";
+import '../assets/css/style.css'
+import Footer from "./Footer.astro";
 interface Item {
   title: String;
   link: String;
   frontmatter: any;
 }
-const { navItems } = Astro.props;
-const {subNavItems} = Astro.props;
+const { navItems, subNavItems, logoText } = Astro.props;
 const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.module != undefined)
+const visible= false;
 ---
 
 <section class="sidebar">
-  <h1>Learn the Web Notes</h1>
-
+  <h1>{logoText}</h1>
+  <HeaderNavigation />
   <nav>
     <ul>
       <li><small>Navigation</small></li>
@@ -21,7 +25,7 @@ const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.module 
         navItems.map((item: Item) => {
           return (
 
-            <li>
+            <li class="nav-item">
               <a
                 href="#"
               >
@@ -30,11 +34,14 @@ const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.module 
 
               </a>
               
+              
               {subNavItems.length > 0?
-                <ul class="subitems">
+                <ul class={`subitems invisible`} >
                    {subNavItemsSet.map((subItem: Item)=>{
                     if (subItem.frontmatter.day == item.frontmatter.day) 
-                      return <li><a href={`/notes/${subItem.frontmatter.day}/${subItem.frontmatter.module}`}>{subItem.frontmatter.title}</a></li>
+                      return <li class="sub-nav-item"><a href={`/notes/${subItem.frontmatter.day}/${subItem.frontmatter.module}`}>
+                      <FileIcon/>
+                        {subItem.frontmatter.title}</a></li>
                    })}
                   </ul>
               : null}
@@ -44,53 +51,30 @@ const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.module 
       }
     </ul>
   </nav>
+  <Footer/>
+
+
 </section>
 
+
 <style>
-  section.sidebar {
-    background: #092033;
-    padding: 1rem;
-    width: 20rem;
-    min-height: 100vh;
-    position: relative;
+  .visible{
+    display:block
   }
 
-  section.sidebar small {
-    color: #fff;
-    font-weight: 100;
-    text-transform: uppercase;
+  .invisible{
+    display:none
   }
 
-  section.sidebar h1 {
-    color: #fff;
-    font-size: min(1rem, 5vw);
-    font-weight: 300;
-    margin: 0;
-  }
-
-  section.sidebar nav {
-    margin-top: 2rem;
-  }
-
-  section.sidebar nav ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  section ul li {
-    list-style: none;
-    margin: 1rem 0;
-  }
-
-  section ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: min(0.85rem, 5vw);
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  section ul li ul.subitems{
-    margin-left:2rem;
-  }
 </style>
+
+
+<script>
+  const navItems = document.querySelectorAll('.nav-item');
+  for (const navItem of navItems) {
+    navItem.addEventListener('click',(e) => {
+        navItem.lastElementChild.classList.toggle('invisible');
+    })
+  }
+</script>
+

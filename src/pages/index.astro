@@ -5,18 +5,15 @@ import Layout from "../layouts/Layout.astro";
 
 const title= "Workshop Overview"
 
-const overviewContent = await Astro.glob('./overview/about.md')
-const navItems = await Astro.glob('./overview/*.md')
+const overviewContent = await Astro.glob('./overview/about.mdx')
+const navItems = await Astro.glob('./overview/*.mdx')
 navItems.sort((a,b)=>a.frontmatter.order - b.frontmatter.order)
-const customLinks = [
-	{text:"Notes", url:"/notes/"}
-]
+const customLinks = [{link: "/notes/",  text:"Notes"}]	
 ---
 
 <Layout title={title}>
-	<Sidebar slot="sidebar" navItems={navItems} customLinks={customLinks} />
+	<Sidebar slot="sidebar" logoText="Learn the Web Notes" navItems={navItems} customLinks={customLinks} />
 	<Main title={title}>
-
 		{
 			overviewContent.map((content) => {
 				return (

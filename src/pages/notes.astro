@@ -4,12 +4,12 @@ import Sidebar from "../components/DaySidebar.astro";
 import Layout from "../layouts/Layout.astro";
 
 const title = "Notes"
-const navItems = await Astro.glob("../notes/*.md");
-const subNavItems = await Astro.glob("../notes/**/*.md");
+const navItems = await Astro.glob("../notes/*.mdx");
+const subNavItems = await Astro.glob("../notes/**/*.mdx");
 ---
 
 <Layout title={title}>
-  <Sidebar slot="sidebar" navItems={navItems} subNavItems={subNavItems} />
+  <Sidebar slot="sidebar" logoText="Learn the Web Notes" navItems={navItems} subNavItems={subNavItems} />
   <Main title={title}>
     <h1>Notes Overview</h1>
     <p>

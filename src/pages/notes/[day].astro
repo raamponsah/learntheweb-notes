@@ -1,10 +1,10 @@
 ---
-import Main from "../../../components/Main.astro";
-import Sidebar from "../../../components/DaySidebar.astro";
-import Layout from "../../../layouts/Layout.astro";
+import Main from "../../components/Main.astro";
+import Sidebar from "../../components/DaySidebar.astro";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const notes = await Astro.glob("../../../notes/**/*.mdx");
+  const notes = await Astro.glob("../../notes/**/*.md");
   return notes.map((note) => ({
     params: { day: note.frontmatter.day, module: note.frontmatter.module },
     props: { note },
@@ -12,10 +12,10 @@ export async function getStaticPaths() {
   }));
 }
 
-const navItems = await Astro.glob("../../../notes/*.mdx");
+const navItems = await Astro.glob("../../notes/*.mdx");
 const { Content, frontmatter } = Astro.props.note;
 navItems.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
-const subNavItems = await Astro.glob("../../../notes/**/*.mdx");
+const subNavItems = await Astro.glob("../../notes/**/*.mdx");
 ---
 
 <Layout title={frontmatter.title}>

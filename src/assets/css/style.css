@@ -1,0 +1,46 @@
+section.sidebar {
+    background: #3403e2;
+    padding: 1rem;
+    width: 20rem;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  section.sidebar small {
+    color: #fff;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+
+  section.sidebar h1 {
+    color: #fff;
+    font-size: min(1rem, 5vw);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  section.sidebar nav {
+    margin-top: 2rem;
+  }
+
+  section.sidebar nav ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  section ul li {
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: min(0.85rem, 5vw);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  section ul li ul.subitems{
+    margin-left:2rem;
+  }

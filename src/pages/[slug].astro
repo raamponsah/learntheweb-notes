@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar.astro'
 import Layout from '../layouts/Layout.astro'
 
 export async function getStaticPaths() {
-    const notes = await Astro.glob('./overview/*.md')
+    const notes = await Astro.glob('./overview/*.mdx')
         return notes.map((note)=>({
             params:{slug:note.frontmatter.slug},
             props:{note}
@@ -14,12 +14,12 @@ export async function getStaticPaths() {
 
   
 
-    const navItems = await Astro.glob('./overview/*.md')
+    const navItems = await Astro.glob('./overview/*.mdx')
     const {Content,frontmatter} = Astro.props.note
     navItems.sort((a,b)=>a.frontmatter.order - b.frontmatter.order)
 ---
 <Layout title={frontmatter.title}>
-	<Sidebar slot="sidebar" navItems={navItems} />
+	<Sidebar slot="sidebar" logoText="Learn the Web Notes" navItems={navItems} />
     <Main title={frontmatter.title}>
         <Content/>
     </Main>
