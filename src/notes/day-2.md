@@ -1,0 +1,18 @@
+---
+# layout: '../../layouts/NoteLayout.astro'
+title: "Day 2"
+day: day-2
+slug: day-2
+---
+
+### Some specific topics that might be covered on the first day include:
+
+Introduction to web development and the role of HTML, CSS, and JavaScript
+Overview of common web development tools, such as text editors and browsers
+Basics of HTML, including the structure of an HTML document and common HTML tags and attributes
+
+### Introduction to CSS, including how to use it to style HTML content
+
+Throughout the day, students will likely have the opportunity to practice what they are learning through hands-on exercises and examples. The instructor may also introduce some basic web development concepts and best practices, such as the importance of accessibility and the role of responsive design in modern web development.
+
+By the end of the first day, students should have a good understanding of the basics of web development and be able to create simple web pages using HTML and CSS. They should also have a solid foundation on which to build as they continue to learn more advanced topics in the days to come.

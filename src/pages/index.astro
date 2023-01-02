@@ -1,0 +1,35 @@
+---
+import Main from "../components/Main.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Layout from "../layouts/Layout.astro";
+
+const title= "Workshop Overview"
+
+const overviewContent = await Astro.glob('./overview/about.md')
+const navItems = await Astro.glob('./overview/*.md')
+navItems.sort((a,b)=>a.frontmatter.order - b.frontmatter.order)
+const customLinks = [
+	{text:"Notes", url:"/notes/"}
+]
+---
+
+<Layout title={title}>
+	<Sidebar slot="sidebar" navItems={navItems} customLinks={customLinks} />
+	<Main title={title}>
+
+		{
+			overviewContent.map((content) => {
+				return (
+					<div>
+						<content.Content/>
+					</div>
+				)
+			})
+		}
+	</Main>
+	
+</Layout>
+
+
+
+

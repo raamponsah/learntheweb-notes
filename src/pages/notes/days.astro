@@ -1,0 +1,36 @@
+---
+import DaySidebar from "../../components/DaySidebar.astro";
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const title = "Days";
+const navItems = await Astro.glob("../../notes/*.md");
+const subNavItems = await Astro.glob("../../notes/**/*.md");
+---
+
+<Layout title={title}>
+  <DaySidebar slot="sidebar" navItems={navItems} subNavItems={subNavItems} />
+  <Main title={title}>
+    <h1>Day Overview</h1>
+    <p>
+      Join us for a 5-day intensive web development workshop, where you'll learn
+      the fundamental building blocks of the web - HTML, CSS, and JavaScript.
+      This hands-on course is perfect for beginners who want to learn how to
+      create and style web pages, as well as more experienced developers looking
+      to refresh their skills.
+    </p>
+    <p>
+      You'll work on real-world projects and receive one-on-one guidance from
+      our expert instructors. By the end of the workshop, you'll have a solid
+      understanding of how to use these powerful technologies to build
+      professional-quality websites. Don't miss this opportunity to jumpstart
+      your web development career! Sign up now.
+    </p>
+    <p>
+      The goal of a web development workshop is to provide attendees with a
+      strong foundation in web development concepts and techniques, as well as
+      the practical skills needed to build and deploy functional,
+      professional-quality websites.
+    </p>
+  </Main>
+</Layout>

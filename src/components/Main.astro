@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const {title} =Astro.props
+---
+
+<Layout title={title}>
+    <main>
+        <h2>{title}</h2>
+        <slot/>
+    </main>
+    
+</Layout>
+<style>
+    main {
+        position: relative;
+        height: 100%;
+        padding: 4rem;
+        line-height: min(2rem,1.5rem);
+        font-size: min(1rem,1.25rem,1.75rem);;
+    } 
+    
+    main h2{
+        font-weight: 300;
+        margin-bottom: 1rem;;
+    }
+
+   
+
+</style>
