@@ -6,16 +6,17 @@ import Layout from "../../../layouts/Layout.astro";
 export async function getStaticPaths() {
   const notes = await Astro.glob("../../../notes/**/*.mdx");
   return notes.map((note) => ({
-    params: { day: note.frontmatter.day, module: note.frontmatter.module },
+    params: { day: `${note.frontmatter.day}`, block: `${note.frontmatter.block}` },
     props: { note },
     
   }));
 }
 
 const navItems = await Astro.glob("../../../notes/*.mdx");
+const subNavItems = await Astro.glob("../../../notes/**/*.mdx");
 const { Content, frontmatter } = Astro.props.note;
 navItems.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
-const subNavItems = await Astro.glob("../../../notes/**/*.mdx");
+
 ---
 
 <Layout title={frontmatter.title}>

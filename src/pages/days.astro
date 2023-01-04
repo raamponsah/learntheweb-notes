@@ -1,11 +1,11 @@
 ---
-import DaySidebar from "../../components/DaySidebar.astro";
-import Main from "../../components/Main.astro";
-import Layout from "../../layouts/Layout.astro";
+import DaySidebar from "../components/DaySidebar.astro";
+import Main from "../components/Main.astro";
+import Layout from "../layouts/Layout.astro";
 
 const title = "Days";
-const navItems = await Astro.glob("../../notes/*.mdx");
-const subNavItems = await Astro.glob("../../notes/**/*.mdx");
+const navItems = await Astro.glob("../notes/*.mdx");
+const subNavItems = await Astro.glob("../notes/**/*.mdx");
 ---
 
 <Layout title={title}>

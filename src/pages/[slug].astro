@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro'
 export async function getStaticPaths() {
     const notes = await Astro.glob('./overview/*.mdx')
         return notes.map((note)=>({
-            params:{slug:note.frontmatter.slug},
+            params:{slug:`${note.frontmatter.slug}`},
             props:{note}
         })
     )

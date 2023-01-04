@@ -2,7 +2,7 @@
 import FileIcon from "./FileIcon.astro";
 import FolderIcon from "./FolderIcon.astro";
 import HeaderNavigation from "./HeaderNavigation.astro";
-import LockDay from "./LockDay.astro";
+
 import '../assets/css/style.css'
 import Footer from "./Footer.astro";
 interface Item {
@@ -11,8 +11,7 @@ interface Item {
   frontmatter: any;
 }
 const { navItems, subNavItems, logoText } = Astro.props;
-const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.module != undefined)
-const visible= false;
+const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.block != undefined)
 ---
 
 <section class="sidebar">
@@ -39,7 +38,7 @@ const visible= false;
                 <ul class={`subitems invisible`} >
                    {subNavItemsSet.map((subItem: Item)=>{
                     if (subItem.frontmatter.day == item.frontmatter.day) 
-                      return <li class="sub-nav-item"><a href={`/notes/${subItem.frontmatter.day}/${subItem.frontmatter.module}`}>
+                      return <li class="sub-nav-item"><a href={`/notes/${subItem.frontmatter.day}/${subItem.frontmatter.block}`}>
                       <FileIcon/>
                         {subItem.frontmatter.title}</a></li>
                    })}
