@@ -31,8 +31,8 @@ const { navItems, logoText } = Astro.props;
               <a
                 href={
                   Astro.request.url.split("/")[3] == "notes"
-                    ? `/notes/${item.frontmatter.day}/${item.frontmatter.module}`
-                    : item.frontmatter.slug
+                    ? `/notes/${item.frontmatter.day}/${item.frontmatter.block}`
+                    : `${item.frontmatter.slug}`
                 }
               >
                 {item.frontmatter.title}
