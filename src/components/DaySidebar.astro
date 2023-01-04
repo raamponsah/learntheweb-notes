@@ -67,13 +67,5 @@ const subNavItemsSet = subNavItems.filter((item: Item)=>item.frontmatter.block !
 
 </style>
 
-
-<script>
-  const navItems = document.querySelectorAll('.nav-item');
-  for (const navItem of navItems) {
-    navItem.addEventListener('click',(e) => {
-        navItem.lastElementChild.classList.toggle('invisible');
-    })
-  }
-</script>
+<script src="../assets/scripts/main.js"></script>
 
