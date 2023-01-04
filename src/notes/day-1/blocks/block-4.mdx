@@ -1,0 +1,48 @@
+---
+# layout: '../../layouts/NoteLayout.astro'
+title: "HTML Video and Audio"
+day: day-1
+block: block-4
+slug: day-1-block-4
+---
+
+HTML5 introduced the `<video>` and `<audio>` elements, which allow you to embed video and audio files in an HTML document without the need for additional plugins like Flash.
+
+To use the `<video>` element, you need to provide a source for the video using the "src" attribute and specify the video's dimensions using the "width" and "height" attributes. You can also use the "controls" attribute to display the default video controls, such as play/pause and volume.
+
+Here is an example of the `<video>` element:
+
+```html
+<video src="video.mp4" width="640" height="360" controls></video>
+
+```
+
+You can also use the `<source>` element to specify multiple sources for the video, to provide support for different video formats.
+```html
+<video width="640" height="360" controls>
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <p>Your browser does not support the video element.</p>
+</video>
+
+```
+
+The `<audio>` element works in a similar way. You can use the "src" attribute to specify the audio source and the "controls" attribute to display the default audio controls.
+
+Here is an example of the `<audio>` element:
+
+```html
+<audio src="audio.mp3" controls></audio>
+
+```
+
+You can also use the `<source>` element to specify multiple sources for the audio, to provide support for different audio formats.
+
+```html
+<audio controls>
+  <source src="audio.mp3" type="audio/mp3">
+  <source src="audio.ogg" type="audio/ogg">
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+```

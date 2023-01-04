@@ -1,22 +1,110 @@
 ---
 # layout: '../../layouts/NoteLayout.astro'
-title: "Day 1: Block 2"
+title: "HTML Basics"
+day: day-1
 block: block-2
 slug: day-1-block-2
 ---
 
-## Day 1: Overview
+HTML (HyperText Markup Language) is a standard markup language used for creating web pages and web applications. HTML consists of a series of elements that are used to structure and format the content on a web page.
 
-On the first day of a 5-day web development workshop for beginners, students can expect to learn the basics of web development and get an overview of the tools and technologies that will be used throughout the workshop.
+An HTML element is made up of a start tag and an end tag, with the content of the element being placed between the tags. For example, the following HTML code creates a paragraph element:
 
-### Some specific topics that might be covered on the first day include:
+```html
+<p>This is a paragraph</p>
+```
 
-Introduction to web development and the role of HTML, CSS, and JavaScript
-Overview of common web development tools, such as text editors and browsers
-Basics of HTML, including the structure of an HTML document and common HTML tags and attributes
+Elements can also have attributes, which provide additional information about the element. An attribute consists of a name and a value, and is added to the start tag of an element. For example, the following HTML code creates a link element with an attribute called "href":
+```html
+<a href="https://www.example.com">This is a link</a>
+```
 
-### Introduction to CSS, including how to use it to style HTML content
+HTML documents are made up of a series of elements nested inside each other. The outermost element is the `<html>` element, which contains two main sections: the `<head>` element and the `<body>` element.
 
-Throughout the day, students will likely have the opportunity to practice what they are learning through hands-on exercises and examples. The instructor may also introduce some basic web development concepts and best practices, such as the importance of accessibility and the role of responsive design in modern web development.
+The `<head>` element contains metadata about the HTML document, such as the title of the page and links to stylesheets. The `<body>` element contains the content of the HTML document, such as headings, paragraphs, and images.
 
-By the end of the first day, students should have a good understanding of the basics of web development and be able to create simple web pages using HTML and CSS. They should also have a solid foundation on which to build as they continue to learn more advanced topics in the days to come.
+Here is an example of a basic HTML document structure:
+
+<div>
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my web page</h1>
+    <p>This is a paragraph of text.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+</html>
+
+```
+</div>
+
+In this example, the `<!DOCTYPE html>` declaration indicates that this is an HTML5 document. The `<html>` element encloses the entire HTML document, and the `<head>` and `<body>` elements divide the document into two parts: the head and the body. The `<title>` element defines the title of the web page, which is displayed in the browser's title bar or tab. The `<h1>` element defines a level 1 heading, and the `<p>` element defines a paragraph. The `<ul>` element defines an unordered list, and the `<li>` elements define list items.
+
+### The `<html>` element
+The `<html>` element is the root element of an HTML document. It tells the web browser that the document is an HTML document and provides the framework for the rest of the HTML elements.
+
+Here is an example of an `<html>` element:
+
+```html
+<html>
+  <!-- other HTML elements go here -->
+</html>
+
+```
+
+## The `<head>` element
+The `<head>` element is a container for metadata (data about the HTML document). It is placed inside the `<html>` element, but before the `<body>` element.
+
+Some common elements that go inside the `<head>` element include the `<title>` element (which defines the title of the document), the `<style>` element (which is used to define styles for the document), and the `<link>` element (which is used to link to external resources such as stylesheets).
+
+Here is an example of a `<head>` element with a `<title>` element and a `<link>` element:
+
+```html
+
+<head>
+  <title>This is the page title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+```
+
+## The `<body>` element
+The `<body>` element contains the main content of the HTML document. It is placed inside the `<html>` element, after the `<head>` element.
+
+Inside the `<body>` element, you can use various HTML elements to structure and format the content of the page. Some common elements include headings (such as `<h1>` through `<h6>`), paragraphs (`<p>`), and lists (`<ul>` and `<ol>`).
+
+Here is an example of a `<body>` element with some headings and a paragraph:
+```html
+<body>
+  <h1>This is a heading</h1>
+  <h2>This is a subheading</h2>
+  <p>This is a paragraph</p>
+</body>
+
+```
+
+## HTML attributes
+HTML elements can have attributes, which provide additional information about the element. An attribute consists of a name and a value, and is added to the start tag of an element.
+
+For example, the `<a>` element (which is used to create a hyperlink) has an attribute called `"href"` that specifies the link's destination. The following code creates a link to the homepage of example.com:
+
+```html
+<a href="https://www.example.com">This is a link</a>
+```
+
+Other common attributes include the `"src"` attribute (used to specify the source of an image or other media), the `"id"` attribute (used to uniquely identify an element), and the "class" attribute (used to apply styles to an element).
+
+Here is an example of an image element with the `"src"` and `"alt"` attributes:
+
+```html
+<img src="image.jpg" alt="A description of the image">
+
+```

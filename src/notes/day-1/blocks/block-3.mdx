@@ -1,0 +1,77 @@
+---
+# layout: '../../layouts/NoteLayout.astro'
+title: "HTML Advanced"
+day: day-1
+block: block-3
+slug: day-1-block-3
+---
+
+### HTML5 semantic elements
+HTML5 introduced a number of new semantic elements that can be used to define the meaning and structure of the content on a web page. These elements include:
+
+### Semantic Elements
+Semantic elements are HTML elements that have specific meaning and convey that meaning to both the browser and the developer. Using semantic elements helps to make the HTML code more readable and easier to understand.
+
+- **`<header>`**: A container for the header of a section or page.
+- **`<nav>`**: A container for navigation links.
+- **`<main>`**: A container for the main content of a page.
+- **`<section>`**: A container for a section of related content.
+- **`<article>`**: A container for an independent piece of content, such as a blog post or news article.
+- **`<aside>`**: A container for content that is related to the main content, but can be considered - separate.
+- **`<footer>`**: A container for the footer of a section or page.
+- Here is an example of how these elements could be used in an HTML document:
+
+```html
+<body>
+  <header>
+    <h1>This is the site title</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>This is a section heading</h2>
+      <p>This is a paragraph</p>
+    </section>
+    <section>
+      <h2>This is another section heading</h2>
+      <p>This is another paragraph</p>
+    </section>
+  </main>
+  <aside>
+    <h3>Related content</h3>
+    <p>This is some related content</p>
+  </aside>
+  <footer>
+    <p>Copyright 2021</p>
+  </footer>
+</body>
+
+```
+
+### Forms and input elements
+HTML forms are used to collect user input and submit it to a server. Forms consist of one or more input elements, such as text fields, radio buttons, and checkboxes.
+
+To create a form, you can use the `<form>` element along with various input elements. The `<form>` element has an attribute called "action" that specifies the URL to which the form data will be sent when the form is submitted.
+
+Here is an example of a simple form with a text field and a submit button:
+
+```html
+<form action="/submit-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <button type="submit">Submit</button>
+</form>
+
+```
+Other input elements you might use in a form include:
+
+- **`<input type="radio">`**: A radio button that allows the user to select one of a number of options.
+- **`<input type="checkbox">`**: A checkbox that allows the user to select multiple options.
+- **`<select> and <option>`**: A dropdown menu that allows the user to select an option from a list.
+- **`<textarea>`** : A multi-line text field.

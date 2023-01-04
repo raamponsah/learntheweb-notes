@@ -44,3 +44,10 @@ section.sidebar {
   section ul li ul.subitems{
     margin-left:2rem;
   }
+
+
+  pre.astro-code {
+    padding: 1rem;
+    margin:1rem 0;
+    background: #34373c;
+}
