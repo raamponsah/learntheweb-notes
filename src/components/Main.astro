@@ -29,6 +29,8 @@ console.log(darkMode);
     font-size: min(1rem, 1.25rem, 1.75rem);
     display: flex;
     flex-direction: column;
+    min-width: auto;
+    margin-left:20rem;
   }
 
   main h2 {
@@ -37,7 +39,7 @@ console.log(darkMode);
   }
 
   main #ham {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 1rem;
     font-size: 1.5rem;
@@ -60,6 +62,7 @@ console.log(darkMode);
   const weatherModeBtn = document.querySelector(".night-mode");
   const ps = document.querySelectorAll("p");
   const lines = document.querySelectorAll("line");
+  const main = document.querySelector('main');
 
   hamMenu.onclick = (e) => {
     e.preventDefault();
@@ -67,8 +70,11 @@ console.log(darkMode);
     if (getComputedStyle(body).getPropertyValue("width") <= "980px") {
       if (getComputedStyle(sidebar).getPropertyValue("display") == "none") {
         sidebar.style.display = "block";
+        main.style.marginLeft='20rem';
+       
       } else {
         sidebar.style.display = "none";
+        main.style.marginLeft=0;
       }
     }
   };

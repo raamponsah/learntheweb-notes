@@ -38,8 +38,9 @@ section.sidebar {
     padding: 1rem;
     width: 20rem;
     min-height: 100vh;
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    /* z-index: 10; */
+    margin-right: 20rem;
     /* display: block; */
   }
 
