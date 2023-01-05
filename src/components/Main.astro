@@ -37,7 +37,7 @@ const { title } = Astro.props;
 </style>
 
 
-<script>
+<script is:inline>
 const hamMenu = document.querySelector('#ham');
 const sidebar = document.querySelector('.sidebar');
 const body = document.querySelector('body');
@@ -46,17 +46,13 @@ hamMenu.onclick = (e) => {
 
     e.preventDefault();
 
-    sidebar.classList.toggle('invisible')
-
-
     if (getComputedStyle(body).getPropertyValue('width') <= '980px') {
-        sidebar.style.display = 'block';
+        if(getComputedStyle(sidebar).getPropertyValue('display') == 'none'){
+            sidebar.style.display = 'block';
+        } else {
+            sidebar.style.display = 'none';
+        }
     }
-    
-    
-    // if(sidebar.style.display == 'block'){
-    //     sidebar.style.display = 'none';
-    // }
 
     
 }
