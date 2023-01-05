@@ -1,6 +1,8 @@
 :root{
   --color: #000;
   --font: 'IBM Plex Sans', sans-serif;
+  font-size: 1.15rem;
+  line-height: 2;
 }
 
 * {
@@ -12,6 +14,7 @@
 
 p{
   margin: 0.5em 0;
+ 
 }
 
 
@@ -26,7 +29,8 @@ body {
 }
 
 section.sidebar {
-    background: #3403e2;
+    /* background: #3403e2; */
+    background: #1b191f;
     padding: 1rem;
     width: 20rem;
     min-height: 100vh;
@@ -92,5 +96,21 @@ section.sidebar {
 @media only screen and (max-width:980px) {
   .sidebar{
     display: none;
+
+  }
+}
+
+/* Style rules for dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+/* Style rules for light mode */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
   }
 }

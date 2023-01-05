@@ -1,12 +1,21 @@
 ---
+import { log } from "astro/dist/core/logger/core";
+import DayHamIcon from "./DayHamIcon.astro";
+import DayModeIcon from "./DayModeIcon.astro";
 import HamIcon from "./HamIcon.astro";
+import NightModeIcon from "./NightModeIcon.astro";
 const { title } = Astro.props;
+const darkMode = matchMedia("(prefers-color-scheme:dark)").matches;
+console.log(darkMode);
 ---
 
 <main>
   <a href="" id="ham">
-  <HamIcon/>
+    <DayHamIcon />
   </a>
+  <!-- <a href="" class="night-mode">
+    <DayModeIcon />
+  </a> -->
   <h2>{title}</h2>
   <slot />
 </main>
@@ -34,26 +43,54 @@ const { title } = Astro.props;
     font-size: 1.5rem;
     text-decoration: none;
   }
+  main .night-mode {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
 </style>
 
-
 <script is:inline>
-const hamMenu = document.querySelector('#ham');
-const sidebar = document.querySelector('.sidebar');
-const body = document.querySelector('body');
+  const darkMode = matchMedia("(prefers-color-scheme:dark)").matches;
+  const hamMenu = document.querySelector("#ham");
+  const sidebar = document.querySelector(".sidebar");
+  const body = document.querySelector("body");
+  const weatherModeBtn = document.querySelector(".night-mode");
+  const ps = document.querySelectorAll("p");
+  const lines = document.querySelectorAll("line");
 
-hamMenu.onclick = (e) => {
-
+  hamMenu.onclick = (e) => {
     e.preventDefault();
 
-    if (getComputedStyle(body).getPropertyValue('width') <= '980px') {
-        if(getComputedStyle(sidebar).getPropertyValue('display') == 'none'){
-            sidebar.style.display = 'block';
-        } else {
-            sidebar.style.display = 'none';
-        }
+    if (getComputedStyle(body).getPropertyValue("width") <= "980px") {
+      if (getComputedStyle(sidebar).getPropertyValue("display") == "none") {
+        sidebar.style.display = "block";
+      } else {
+        sidebar.style.display = "none";
+      }
     }
+  };
 
-    
-}
+  function getNightModeStatus() {
+    const nightModeActive = localStorage.getItem("night");
+    return nightModeActive;
+  }
+
+  if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
+    console.log(window.matchMedia("(prefers-color-scheme:dark)").matches);
+    console.log(lines);
+    lines.forEach(line => {
+      line.style.stroke = "white";
+    });
+  }
+
+  if (!window.matchMedia("(prefers-color-scheme:dark)").matches) {
+    console.log(window.matchMedia("(prefers-color-scheme:dark)").matches);
+    console.log(lines);
+    lines.forEach(line => {
+      line.style.stroke = "black";
+    });
+  }
 </script>
