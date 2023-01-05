@@ -1,8 +1,7 @@
 :root{
   --color: #000;
   --font: 'IBM Plex Sans', sans-serif;
-  font-size: 1.15rem;
-  line-height: 2;
+  font-size: 1rem;
 }
 
 * {
@@ -12,6 +11,10 @@
   padding: 0;
 }
 
+h1, h2,h3,h4, h5, h6 {
+  margin:0.5rem 0;
+
+}
 p{
   margin: 0.5em 0;
  
@@ -30,7 +33,8 @@ body {
 
 section.sidebar {
     /* background: #3403e2; */
-    background: #1b191f;
+    /* background: #1b191f; */
+    background: #000b70;
     padding: 1rem;
     width: 20rem;
     min-height: 100vh;
@@ -91,6 +95,11 @@ section.sidebar {
 
 .invisible{
   display: none;
+}
+
+li.sub-nav-item a{
+  font-size: 0.85rem;
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width:980px) {
