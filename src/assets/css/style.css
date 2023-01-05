@@ -1,9 +1,37 @@
+:root{
+  --color: #000;
+  --font: 'IBM Plex Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  margin: 0.5em 0;
+}
+
+
+
+body {
+  min-width: 100%;
+  background: #fff;
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:40px;	
+  position: relative;
+}
+
 section.sidebar {
     background: #3403e2;
     padding: 1rem;
     width: 20rem;
     min-height: 100vh;
     position: relative;
+    /* display: block; */
   }
 
   section.sidebar small {
@@ -50,4 +78,18 @@ section.sidebar {
     padding: 1rem;
     margin:1rem 0;
     background: #34373c;
+}
+
+.visible{
+  display: block;
+}
+
+.invisible{
+  display: none;
+}
+
+@media only screen and (max-width:980px) {
+  .sidebar{
+    display: none;
+  }
 }

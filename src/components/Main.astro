@@ -1,30 +1,63 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-const {title} =Astro.props
+import HamIcon from "./HamIcon.astro";
+const { title } = Astro.props;
 ---
 
-<Layout title={title}>
-    <main>
-        <h2>{title}</h2>
-        <slot/>
-    </main>
-    
-</Layout>
+<main>
+  <a href="" id="ham">
+  <HamIcon/>
+  </a>
+  <h2>{title}</h2>
+  <slot />
+</main>
+
 <style>
-    main {
-        position: relative;
-        height: 100%;
-        padding: 4rem;
-        line-height: min(2rem,1.5rem);
-        font-size: min(1rem,1.25rem,1.75rem);;
-    } 
-    
-    main h2{
-        font-weight: 300;
-        margin-bottom: 1rem;;
-    }
+  main {
+    position: relative;
+    min-height: 100vh;
+    padding: 4rem;
+    line-height: min(2rem, 1.5rem);
+    font-size: min(1rem, 1.25rem, 1.75rem);
+    display: flex;
+    flex-direction: column;
+  }
 
-   
+  main h2 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
 
+  main #ham {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
 </style>
+
+
+<script>
+const hamMenu = document.querySelector('#ham');
+const sidebar = document.querySelector('.sidebar');
+const body = document.querySelector('body');
+
+hamMenu.onclick = (e) => {
+
+    e.preventDefault();
+
+    sidebar.classList.toggle('invisible')
+
+
+    if (getComputedStyle(body).getPropertyValue('width') <= '980px') {
+        sidebar.style.display = 'block';
+    }
+    
+    
+    // if(sidebar.style.display == 'block'){
+    //     sidebar.style.display = 'none';
+    // }
+
+    
+}
+</script>

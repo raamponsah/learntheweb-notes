@@ -4,3 +4,7 @@ for (const navItem of navItems) {
       navItem.lastElementChild.classList.toggle('invisible');
   })
 }
+
+
+// Ham Menu
+

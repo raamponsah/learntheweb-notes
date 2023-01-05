@@ -1,53 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import BaseHead from "../components/BaseHead.astro";
 
-interface Props{
-	title: String;
-
+interface Props {
+  title: String;
 }
-const {title="Learn the Web Notes"} = Astro.props as Props;
+const { title = "Learn the Web Notes" } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<BaseHead title={title}/>
-</head>
-<body>
+  <head>
+    <BaseHead title={title} />
+  </head>
+  <body>
+    <slot name="sidebar" />
 
-	<slot name="sidebar"/>
-
-	<slot/>
-
-</body>
+    <slot />
+  </body>
 </html>
-
-
-<style is:global>
-	:root{
-		--color: #000;
-		--font: 'IBM Plex Sans', sans-serif;
-	}
-
-	* {
-		box-sizing: border-box;
-		font-family: var(--font);
-		margin: 0;
-		padding: 0;
-	}
-	
-	p{
-		margin: 0.5em 0;
-	}
-
-	
-
-	body {
-		min-width: 100%;
-		background: #fff;
-		display:grid;
-		grid-template-columns: 1fr 4fr;
-		gap:40px;	
-		position: relative;
-	}
-</style>

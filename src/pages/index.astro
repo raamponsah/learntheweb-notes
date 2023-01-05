@@ -3,30 +3,30 @@ import Main from "../components/Main.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Layout from "../layouts/Layout.astro";
 
-const title= "Workshop Overview"
+const title = "Workshop Overview";
 
-const overviewContent = await Astro.glob('./overview/about.mdx')
-const navItems = await Astro.glob('./overview/*.mdx')
-navItems.sort((a,b)=>a.frontmatter.order - b.frontmatter.order)
-const customLinks = [{link: "/notes/",  text:"Notes"}]	
+const overviewContent = await Astro.glob("./overview/about.mdx");
+const navItems = await Astro.glob("./overview/*.mdx");
+navItems.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+const customLinks = [{ link: "/notes/", text: "Notes" }];
 ---
 
 <Layout title={title}>
-	<Sidebar slot="sidebar" logoText="Learn the Web Notes" navItems={navItems} customLinks={customLinks} />
-	<Main title={title}>
-		{
-			overviewContent.map((content) => {
-				return (
-					<div>
-						<content.Content/>
-					</div>
-				)
-			})
-		}
-	</Main>
-	
+  <Sidebar
+    slot="sidebar"
+    logoText="Learn the Web Notes"
+    navItems={navItems}
+    customLinks={customLinks}
+  />
+  <Main title={title}>
+    {
+      overviewContent.map((content) => {
+        return (
+          <div>
+            <content.Content />
+          </div>
+        );
+      })
+    }
+  </Main>
 </Layout>
-
-
-
-
