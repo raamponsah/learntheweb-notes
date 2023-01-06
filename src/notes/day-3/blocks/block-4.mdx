@@ -1,0 +1,68 @@
+---
+title: "DOM Events"
+day: day-3
+block: block-4
+slug: day-3-block-4
+---
+
+### DOM Events
+
+DOM Events are actions that can be triggered by the user or by the browser. They allow us to interact with the HTML elements on a webpage and make them more dynamic.
+
+Some common DOM events include:
+
+- **click**: triggered when the user clicks on an element
+- **hover**: triggered when the user moves their mouse over an element
+- **focus**: triggered when an element receives focus (e.g. when a user clicks on a form input)
+- **submit**: triggered when a form is submitted
+- **change**: triggered when the value of an element is changed (e.g. when a user selects a different option from a dropdown menu)
+
+To attach an event to an element, we can use the addEventListener method in JavaScript. For example, if we want to trigger an alert message when a button is clicked, we can do the following:
+```js
+let button = document.querySelector('button');
+
+button.addEventListener('click', function() {
+  alert('Button was clicked!');
+});
+```
+We can also pass a second argument to the addEventListener method, which is the function that will be executed when the event is triggered. This function is known as the event handler.
+
+For example, if we want to change the color of a div element when the user hovers over it, we can do the following:
+
+```js
+let div = document.querySelector('div');
+
+div.addEventListener('mouseover', function() {
+  div.style.color = 'red';
+});
+```
+
+We can also use event delegation to attach an event to multiple elements at once. This is useful when we have a large number of elements and we want to avoid attaching an event listener to each one individually.
+
+For example, if we have a list of items and we want to trigger an alert message when any of them is clicked, we can use event delegation like this:
+
+```js
+let list = document.querySelector('ul');
+
+list.addEventListener('click', function(event) {
+  if (event.target.tagName === 'LI') {
+    alert('List item was clicked!');
+  }
+});
+```
+
+In this example, we attach the event listener to the parent ul element, and then check the tag name of the element that was actually clicked (using the event.target property). If the tag name is LI, we know that one of the list items was clicked, and we can trigger the alert message.
+
+We can also pass additional arguments to the event handler function, such as the event object itself, which provides information about the event that occurred. This object contains properties such as target (which refers to the element that triggered the event), type (which refers to the type of event), and currentTarget (which refers to the element to which the event listener is attached).
+
+For example, if we want to change the color of a form input when it receives focus, we can do the following:
+
+```js
+let input = document.querySelector('input');
+
+input.addEventListener('focus', function(event) {
+  event.target.style.color = 'red';
+});
+
+```
+In this example, we use the event.target property to refer to the form input that received focus, and then we change its color to red.

@@ -102,20 +102,23 @@ li.sub-nav-item a{
 pre.astro-code {
   padding: 1rem;
   margin:1rem 0;
-  background: #34373c;
+  background: #3a343c;
   position: relative;
+  border-radius: 10px;;
+  border-top: 0.5px solid teal;
 }
 
 .copy-button{
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: rgb(251, 176, 2);
+  background: rgb(251, 2, 156);
   border: none;
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   cursor: pointer;
+  color: white;
   
  
 }

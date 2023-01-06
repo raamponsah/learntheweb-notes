@@ -1,0 +1,57 @@
+---
+title: "Arrays & Objects"
+day: day-3
+block: block-5
+slug: day-3-block-5
+---
+
+### Arrays
+
+An array is a list-like object in JavaScript that can store multiple values in a single variable. It is similar to a list in Python or an array in Java. You can create an array by enclosing a comma-separated list of values in square brackets ([]). The values in an array are called elements, and each element has a numbered position called an index, which starts at 0.
+
+Here's an example of how you can create an array of integers in JavaScript:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+```
+You can access the elements of an array by using their index, like this:
+```js
+console.log(numbers[0]);  // Output: 1
+console.log(numbers[1]);  // Output: 2
+console.log(numbers[2]);  // Output: 3
+console.log(numbers[3]);  // Output: 4
+console.log(numbers[4]);  // Output: 5
+```
+
+You can also use the length property to find the length of an array:
+```js
+console.log(numbers.length);  // Output: 5
+```
+
+You can use the `push()` method to add an element to the end of an array:
+
+```js
+numbers.push(6);
+console.log(numbers);  // Output: [1, 2, 3, 4, 5, 6]
+```
+You can use the `pop()` method to remove the last element of an array:
+
+```js
+numbers.pop();
+console.log(numbers);  // Output: [1, 2, 3, 4, 5]
+```
+
+You can use the `unshift()` method to add an element to the beginning of an array:
+```js
+numbers.unshift(0);
+console.log(numbers);  // Output: [0, 1, 2, 3, 4, 5]
+
+```
+
+You can use the `shift()` method to remove the first element of an array:
+
+```js
+numbers.shift();
+console.log(numbers);  // Output: [1, 2, 3, 4, 5]
+```
+
