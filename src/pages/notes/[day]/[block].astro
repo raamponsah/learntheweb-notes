@@ -39,7 +39,7 @@ navItems.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
  
   button.innerText = 'Copy';
   button.classList.add('copy-button');
-  
+
 
   codes.forEach(code => {
     code.appendChild(button.cloneNode(true));
@@ -49,11 +49,18 @@ navItems.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
         const code = e.target.parentNode.querySelector('code');
         const text = code.innerText;
         navigator.clipboard.writeText(text);
-        console.log(text);
+        setTimeout(() => {
+          e.target.innerText = 'Copied!';
+          setTimeout(() => {
+            e.target.innerText = 'Copy';
+          }, 1000);
+        }, 100);
       });
     });
     
   });
+
+  
  
 
 
