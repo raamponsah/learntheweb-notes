@@ -1,7 +1,7 @@
 :root{
   --color: #000;
   --font: 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 
 * {

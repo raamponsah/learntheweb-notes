@@ -1,6 +1,6 @@
 ---
 # layout: '../../layouts/NoteLayout.astro'
-title: "Day 2: Introduction to CSS"
+title: "Introduction to CSS"
 day: day-2
 block: block-2
 slug: day-2-block-2
@@ -43,7 +43,7 @@ To write CSS, you will need to use a text editor or an integrated development en
 
 CSS follows a specific syntax, or set of rules, for how it should be written. Here is an example of a CSS rule:
 
-```html
+```css
 selector {
   property: value;
 }
@@ -54,7 +54,7 @@ To write CSS, you will need to use a text editor or an integrated development en
 
 CSS follows a specific syntax, or set of rules, for how it should be written. Here is an example of a CSS rule:
 
-```html
+```css
 selector {
   property: value;
 }
@@ -64,7 +64,7 @@ The `selector` is used to specify which HTML element the style should be applied
 
 Here is an example of a CSS rule that changes the font size and color of all h1 elements:
 
-```html
+```css
 h1 {
   font-size: 24px;
   color: blue;
@@ -72,7 +72,7 @@ h1 {
 ```
 You can also use multiple selectors and properties in a single CSS rule. Here is an example that changes the font size and color of all `h1` elements and all `p` elements:
 
-```html
+```css
 h1, p {
   font-size: 24px;
   color: blue;
@@ -81,5 +81,127 @@ h1, p {
 
 To use CSS in an HTML document, you will need to link to a CSS file or include a `<style>` element in the `<head>` of your `HTML` file. Then, you can apply the styles you have defined in your CSS to the elements in your `HTML` document.
 
+### Styling with CSS
 
+There are many different properties that you can use in CSS to style your HTML elements. Here are some common properties that you can use to style text:
 
+- `font-family`: sets the font for the text
+- `font-size`: sets the size of the font
+- `font-weight`: sets the boldness of the font
+- `color`: sets the color of the text
+- `text-align`: sets the alignment of the text
+- `text-decoration`: adds a decoration to the text, such as an underline
+
+Here is an example of how you can use these properties to style the text of a paragraph element:
+
+```css
+p {
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+  text-decoration: underline;
+}
+
+```
+
+You can also use CSS to style other aspects of your HTML elements, such as their layout and background. Here are some common properties that you can use to style layout:
+
+- `width`: sets the width of an element
+- `height`: sets the height of an element
+- `margin`: sets the space around an element
+- `padding`: sets the space within an element
+- `float`: floats an element to the left or right of its container
+
+Here is an example of how you can use these properties to style the layout of a button element:
+
+```css
+button {
+  width: 150px;
+  height: 50px;
+  margin: 10px;
+  padding: 20px;
+  float: right;
+}
+
+```
+
+And here are some common properties that you can use to style the background of an element:
+
+- `background-color`: sets the background color of an element
+- `background-image`: sets a background image for an element
+- `background-repeat`: sets whether the background image should repeat or not
+- `background-position`: sets the position of the background image
+
+Here is an example of how you can use these properties to style the background of a div element:
+
+```css
+div {
+  background-color: green;
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+```
+
+### CSS Colors and Images
+
+CSS allows you to style the colors and images used in your HTML elements.
+
+To set the color of an element using CSS, you can use the color property. The value of the color property can be a name of a color, such as red or blue, or it can be a hexadecimal code representing a color, such as #ff0000 for red or #0000ff for blue. You can also use the rgb() function to specify a color using values for red, green, and blue.
+
+Here is an example of how you can use the color property to set the text color of a paragraph:
+
+```css
+p {
+  color: red;
+}
+```
+
+You can also use the background-color property to set the background color of an element. The value of the background-color property can be a name of a color, a hexadecimal code, or an rgb() function.
+
+Here is an example of how you can use the background-color property to set the background color of a div:
+
+```css
+div {
+  background-color: #00ff00;
+}
+
+```
+
+To use an image as a background for an element, you can use the background-image property. The value of the `background-image` property should be the URL of the image you want to use.
+
+Here is an example of how you can use the `background-image` property to set a background image for a body element:
+
+```css
+body {
+  background-image: url('image.jpg');
+}
+
+```
+
+You can use the `background-repeat` property to control whether the background image repeats or not. The possible values for `background-repeat` are `repeat`, `repeat-x`, `repeat-y`, and `no-repeat`.
+
+Here is an example of how you can use the background-repeat property to set the background image to repeat only horizontally:
+
+```css
+body {
+  background-image: url('image.jpg');
+  background-repeat: repeat-x;
+}
+
+```
+
+And you can use the `background-position` property to control the position of the background image. The possible values for `background-position` are `left`, `center`, `right`, `top`, `bottom`, or a combination of these values.
+
+Here is an example of how you can use the `background-position` property to set the background image to be positioned at the top center of the element:
+
+```css
+body {
+  background-image: url('image.jpg');
+  background-position: center top;
+}
+
+```

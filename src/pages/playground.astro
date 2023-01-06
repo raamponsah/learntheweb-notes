@@ -1,0 +1,17 @@
+---
+import Main from "../components/Main.astro";
+import Sidebar from "../components/DaySidebar.astro";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Playground"
+const navItems = await Astro.glob("../notes/*.mdx");
+const subNavItems = await Astro.glob("../notes/**/*.mdx");
+---
+
+<Layout title={title}>
+  <Sidebar slot="sidebar" logoText="Learn the Web Notes" navItems={navItems} subNavItems={subNavItems} />
+  <Main title={title}>
+    <iframe src="https://stackblitz.com/edit/web-platform-b6pcpb?embed=1&file=styles.css" style="border:none;width:100%;height:100%;">
+    </iframe>
+  </Main>
+</Layout>

@@ -1,0 +1,81 @@
+---
+# layout: '../../layouts/NoteLayout.astro'
+title: "Flexbox Layout"
+day: day-2
+block: block-4
+slug: day-2-block-4
+---
+
+### Flexbox
+
+Flexbox is a layout mode that allows elements to be aligned and distributed within a container in a flexible way. It is useful for creating responsive layouts that adapt to different screen sizes.
+
+Here are some of the main rules for using flexbox:
+
+1. display: flex: To use flexbox, you need to set the display property of the container element to "flex".
+Example:
+
+```css
+.container {
+  display: flex;
+}
+
+```
+
+2. flex-direction: This property determines the direction in which the flex items are laid out. The possible values are "row", "row-reverse", "column", and "column-reverse".
+Example:
+
+```css
+.container {
+  display: flex;
+  flex-direction: row; /* horizontal layout */
+}
+
+```
+
+3. flex-wrap: This property determines whether the flex items should wrap onto multiple lines or not. The possible values are "nowrap", "wrap", and "wrap-reverse".
+Example:
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap; /* flex items will wrap onto multiple lines */
+}
+
+```
+
+4. justify-content: This property determines how the flex items are aligned along the main axis (which is the row axis by default). The possible values are "flex-start", "flex-end", "center", "space-between", and "space-around".
+Example:
+
+```css
+.container {
+  display: flex;
+  justify-content: center; /* flex items are centered along the main axis */
+}
+
+```
+
+5. align-items: This property determines how the flex items are aligned along the cross axis (which is the column axis by default). The possible values are "flex-start", "flex-end", "center", "baseline", and "stretch".
+Example:
+
+```css
+.container {
+  display: flex;
+  align-items: stretch; /* flex items are stretched to fill the container along the cross axis */
+}
+```
+
+6. flex: This property determines the size of a flex item relative to the other items in the   container. It can take a number or a fraction as its value.
+Example:
+
+```css
+.left-column {
+  flex: 1; /* this flex item will take up 1 unit of space */
+}
+
+.right-column {
+  flex: 2; /* this flex item will take up 2 units of space */
+}
+```
+
+These are just a few of the many rules available for using flexbox. For more information, you can refer to the official documentation at https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout.

@@ -1,0 +1,117 @@
+---
+# layout: '../../layouts/NoteLayout.astro'
+title: "Layouts and Positioning"
+day: day-2
+block: block-3
+slug: day-2-block-3
+---
+
+### Layouts and Positioning
+
+CSS layouts and positioning allow us to control the appearance and layout of our web pages. 
+There are several ways to do this, including using the display, position, and float properties.
+CSS Layouts are the way in which HTML elements are positioned on a webpage. There are several different techniques for positioning elements, including:
+
+1. Floats: Elements can be floated to the left or right of a container element, allowing other elements to wrap around them. This is often used for creating multi-column layouts.
+Example:
+
+```css
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.left-column {
+  float: left;
+  width: 60%;
+}
+
+.right-column {
+  float: right;
+  width: 40%;
+}
+
+```
+
+2. Flexbox: Flexbox is a layout mode that allows elements to be aligned and distributed within a container in a flexible way. It is useful for creating responsive layouts that adapt to different screen sizes.
+Example
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  flex: 1;
+}
+
+.right-column {
+  flex: 2;
+}
+
+```
+
+3. Grid: The grid layout allows elements to be placed in a grid of rows and columns. It is useful for creating complex layouts that require precise placement of elements.
+Example:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+}
+
+.left-column {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.right-column {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+```
+
+4. Absolute positioning: Elements can be positioned absolutely within a container element, allowing them to be placed at specific coordinates on the page.
+Example:
+
+```css
+.container {
+  position: relative;
+}
+
+.left-column {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.right-column {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}
+
+```
+
+5. Fixed positioning: Elements can be positioned fixed within the viewport, allowing them to stay in a specific position even when the page is scrolled.
+Example:
+
+```css
+.left-column {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.right-column {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+```
+
+It is important to consider the use case when choosing a layout and positioning technique. For example, if you need to create a multi-column layout with equal-sized columns, floats may not be the best choice as they do not support equal-height columns. In this case, flexbox or grid may be more suitable. On the other hand, if you need to place an element at a specific location on the page, absolute or fixed positioning may be the better choice.
