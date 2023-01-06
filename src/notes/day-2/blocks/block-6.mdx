@@ -8,7 +8,116 @@ slug: day-2-block-6
 
 ### Advanced Selectors and Layouts
 
-CSS Advanced Selectors allow you to target specific elements on a webpage based on their attributes, relationships, or position in the document. Some common advanced selectors include:
+CSS Advanced Selectors allow you to target specific elements on a webpage based on their attributes, relationships, or position in the document. Here is an in-depth look at some common advanced selectors with code examples:
 
 Attribute selectors: These selectors allow you to target elements based on their attributes and attribute values.
-Examples:
+
+- [attribute]: targets elements with the specified attribute, regardless of its value.
+
+Example:
+```css
+a[href] {
+  /* targets all links with an href attribute */
+  color: blue;
+}
+```
+
+- [attribute=value]: targets elements with the specified attribute and value.
+  
+Example:
+
+```css
+a[href="http://www.example.com"] {
+  /* targets all links with a specific href value */
+  font-weight: bold;
+}
+```
+
+- [attribute~=value]: targets elements with the specified attribute and a value that is a space-separated list of words, one of which is the specified value.
+Example:
+
+```css
+a[href~="example"] {
+  /* targets all links with an href attribute that contains the word "example" */
+  text-decoration: underline;
+}
+```
+
+- [attribute|=value]: targets elements with the specified attribute and a value that is a hyphen-separated list of words, starting with the specified value.
+
+Example:
+```css
+a[href|="http"] {
+  /* targets all links with an href attribute that starts with "http" */
+  color: red;
+}
+```
+
+- [attribute^=value]: targets elements with the specified attribute and a value that starts with the specified value.
+Example:
+
+```css
+a[href^="http"] {
+  /* targets all links with an href attribute that starts with "http" */
+  font-style: italic;
+}
+```
+
+- [attribute$=value]: targets elements with the specified attribute and a value that ends with the specified value.
+  
+Example:
+```css
+a[href$=".pdf"] {
+  /* targets all links with an href attribute that ends with ".pdf" */
+  font-size: 18px;
+}
+```
+
+- [attribute*=value]: targets elements with the specified attribute and a value that contains the specified value.
+```css
+a[href*="example"] {
+  /* targets all links with an href attribute that contains the word "example" */
+  background-color: yellow;
+}
+
+```
+
+### Pseudo-class selectors
+
+Pseudo-class selectors are CSS selectors that allow you to target elements based on their state or position in the document. Some common pseudo-class selectors include:
+
+- :active: targets elements that are currently being clicked on.
+- :checked: targets elements that are checked (e.g. checkboxes, radio buttons).
+- :disabled: targets elements that are disabled.
+- :empty: targets elements that have no children.
+- :enabled: targets elements that are enabled.
+- :first-child: targets the first child element of a parent element.
+- :first-of-type: targets the first element of its type within a parent element.
+- :focus: targets elements that are currently focused (e.g. input fields).
+- :hover: targets elements when the mouse is hovering over them.
+- :in-range: targets elements whose values are within a specified range (e.g. input fields with a min - and max attribute).
+- :invalid: targets elements with an invalid value (e.g. input fields with required attributes).
+- :last-child: targets the last child element of a parent element.
+- :last-of-type: targets the last element of its type within a parent element.
+- :link: targets links that have not been visited.
+- :not(selector): targets elements that do not match the specified selector.
+- :nth-child(n): targets the nth child element of a parent element.
+- :nth-last-child(n): targets the nth child element of a parent element, counting from the last child.
+- :nth-last-of-type(n): targets the nth element of its type within a parent element, counting from the - last child.
+- :nth-of-type(n): targets the nth element of its type within a parent element.
+- :only-child: targets elements that are the only child of their parent element.
+- :only-of-type: targets elements that are the only element of their type within a parent element.
+- :optional: targets elements with no required attribute.
+- :out-of-range: targets elements whose values are outside a specified range (e.g. input fields with a - min and max attribute).
+- :read-only: targets elements with a readonly attribute.
+- :read-write: targets elements with a readonly attribute.
+- :required: targets elements with a required attribute.
+- :root: targets the root element of the document (e.g. the html element).
+- :target: targets the element that matches the fragment identifier of the URL (e.g. the element with an id matching the value after the "#" in the URL).
+
+Example:
+```css
+a:hover {
+  /* targets links when the mouse is hovering over them
+  }
+```

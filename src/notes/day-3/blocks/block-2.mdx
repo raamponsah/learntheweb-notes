@@ -1,0 +1,117 @@
+---
+title: "Introduction to JavaScript"
+day: day-3
+block: block-2
+slug: day-3-block-2
+---
+
+### Introduction to JavaScript
+
+JavaScript is a programming language that is commonly used in web development to add interactivity to websites. It is an implementation of the ECMAScript standard and is primarily used to create client-side scripts that run in web browsers.
+
+JavaScript is typically used to create dynamic effects on websites, such as animations, interactive forms, and complex menus. It is also used to add functionality to web pages, such as allowing users to submit forms, play games, or view maps.
+
+In web development, JavaScript is usually used alongside HTML (HyperText Markup Language) and CSS (Cascading Style Sheets). HTML is used to structure the content of a webpage, while CSS is used to control the appearance of that content. JavaScript can be used to manipulate both the HTML and CSS to create dynamic effects on the page.
+
+For example, a JavaScript script might be used to validate the input of a form before it is submitted, or to create an interactive map that displays different information when the user clicks on different parts of the map.
+
+
+#### Basic JavaScript syntax
+
+**Variables**: Variables are used to store values in JavaScript. You can declare a variable using the var keyword, like this:
+```js
+var x;
+
+```
+You can also assign a value to a variable when you declare it:
+```js
+var x = 5;
+
+```
+
+**Data types**: JavaScript has several data types, including strings, numbers, and booleans. Here are some examples of each data type:
+
+```js
+// String
+var name = "Alice";
+
+// Number
+var age = 25;
+
+// Boolean
+var isStudent = true;
+
+```
+
+**Operators**: JavaScript has various operators for performing different kinds of operations. Here are a few examples:
+
+```js
+// Assignment operator
+var x = 5;
+
+// Arithmetic operators
+var y = x + 3;
+var z = x * y;
+
+// Comparison operator
+if (x > y) {
+  console.log("x is greater than y");
+}
+
+```
+
+
+**Control structures**: JavaScript has several control structures for controlling the flow of execution of your code. These include if/else statements for making decisions, for loops for repeating blocks of code, and while loops for executing a block of code while a certain condition is true. Here is an example of an if/else statement
+
+```js
+if (x > y) {
+  console.log("x is greater than y");
+} else {
+  console.log("x is not greater than y");
+}
+```
+
+And here is an example of a for loop:
+
+```js
+for (var i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
+Here are some modern JavaScript syntax elements that you might encounter:
+
+`const` and `let`: In addition to the var keyword, JavaScript has two new ways to declare variables: const and let. `const` stands for "constant" and is used to declare a variable that cannot be reassigned. `let` is similar to `var`, but the variable is block-scoped rather than function-scoped.
+
+```js
+const PI = 3.14;
+PI = 3.14159;  // This will cause an error
+
+let x = 5;
+x = 10;  // This is allowed
+```
+
+**Arrow functions**: Arrow functions are a shorter syntax for declaring functions in JavaScript. They are especially useful when you need to pass a small anonymous function as an argument to another function.
+Here is an example of a traditional function:
+```javascript
+function add(x, y) {
+  return x + y;
+}
+```
+
+And here is the same function written using an arrow function:
+```js
+const add = (x, y) => {
+  return x + y;
+};
+
+```
+
+***Template literals**: Template literals are a new way to create strings in JavaScript. They allow you to include expressions inside a string, and they use the backtick (`) character rather than single or double quotes.
+Here is an example of a template literal:
+
+```js
+const name = "Alice";
+console.log(`Hello, ${name}!`);  // Outputs "Hello, Alice!"
+
+```
