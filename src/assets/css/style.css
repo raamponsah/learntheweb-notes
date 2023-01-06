@@ -32,16 +32,13 @@ body {
 }
 
 section.sidebar {
-    /* background: #3403e2; */
-    /* background: #1b191f; */
     background: #000b70;
     padding: 1rem;
     width: 20rem;
     min-height: 100vh;
     position: fixed;
-    /* z-index: 10; */
     margin-right: 20rem;
-    /* display: block; */
+    overflow: scroll;
   }
 
   section.sidebar small {
