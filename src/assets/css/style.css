@@ -35,7 +35,7 @@ section.sidebar {
     background: #000b70;
     padding: 1rem;
     width: 20rem;
-    min-height: 100vh;
+    min-height: 100%;
     position: absolute;
     margin-right: 20rem;
     overflow: scroll;
@@ -56,6 +56,7 @@ section.sidebar {
 
   section.sidebar nav {
     margin-top: 2rem;
+    position: sticky;
   }
 
   section.sidebar nav ul {
