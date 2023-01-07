@@ -36,7 +36,7 @@ section.sidebar {
     padding: 1rem;
     width: 20rem;
     min-height: 100vh;
-    position: fixed;
+    position: sticky;
     margin-right: 20rem;
     overflow: scroll;
   }
