@@ -1,0 +1,86 @@
+---
+title: "Advanced JavaScript"
+day: day-3
+block: block-6
+slug: day-3-block-6
+---
+
+
+### JavaScript Object Notation(JSON)
+
+JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is based on a subset of the JavaScript programming language, and it is a common data format that is used for asynchronous browser-server communication, including as a replacement for XML in some AJAX-style systems.
+
+In JavaScript, you can use the JSON object to parse a JSON string and convert it to an object, and to convert an object to a JSON string.
+
+Here's an example of parsing a JSON string and converting it to an object:
+
+```json
+const jsonString = '{"name":"John", "age":30, "city":"New York"}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // Output: "John"
+```
+
+And here's an example of converting an object to a JSON string:
+
+```json
+const obj = {name: 'John', age: 30, city: 'New York'};
+const jsonString = JSON.stringify(obj);
+console.log(jsonString); // Output: '{"name":"John","age":30,"city":"New York"}'
+```
+
+The JSON.parse() function takes a JSON string as input and returns a JavaScript object constructed from that JSON string.
+
+The JSON.stringify() function takes a JavaScript object as input and returns a JSON string representation of that object.
+
+You can also use the JSON.parse() function to parse a JSON string and convert it to an object, and you can use the JSON.stringify() function to convert an object to a JSON string.
+
+I hope this helps to clear things up! Let me know if you have any questions.
+
+### AJAX
+
+Ajax (Asynchronous JavaScript and XML) is a set of web development techniques used to send and receive data asynchronously from a server without causing a page refresh. It allows you to update a page with new data without having to reload the whole page.
+
+One way to make an Ajax request is to use the XMLHttpRequest object. Here's an example of using the XMLHttpRequest object to make a GET request to a server:
+
+```js
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://example.com/data.json', true);
+xhr.onload = function() {
+  if (this.status === 200) {
+    console.log(this.responseText);
+  }
+};
+xhr.send();
+
+```
+
+The XMLHttpRequest object has several properties and methods that you can use to make an Ajax request. The `open()` method is used to initialize the request, and the `send()` method is used to send the request. The onload event is triggered when the request is completed, and the status property is used to check the status of the request.
+
+### Fetch API
+Another way to make an Ajax request is to use the `fetch()` function, which is a modern way to make HTTP requests. Here's an example of using the `fetch()` function to make a GET request:
+```js
+fetch('https://example.com/data.json')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+
+The `fetch()` function returns a promise that resolves with the response from the server. The `then()` method is used to handle the response, and the `catch()` method is used to handle any errors.
+
+You can also use the fetch() function to make `POST`, `PUT`, and `DELETE` requests by using the second argument to specify the request options. For example, here's how you can make a POST request using the `fetch()` function:
+
+```js
+const data = {name: 'John', age: 30};
+fetch('https://example.com/submit', {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+
+I hope this helps to give you an understanding of how to make HTTP requests using Ajax! 

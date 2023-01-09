@@ -1,0 +1,61 @@
+---
+title: "Introduction to DOM"
+day: day-3
+block: block-3
+slug: day-3-block-3
+---
+
+### Introduction to DOM
+
+The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of a document as a tree of objects, with each object representing a part of the document (such as an element, an attribute, or a piece of text).
+
+The DOM allows you to programmatically access and modify the content of a document. For example, you can use the DOM to change the text of an element, add or remove elements from the document, or change the styles of an element.
+
+To work with the DOM, you can use JavaScript to access DOM elements and change their properties or attributes. For example, you can use the document.getElementById() method to find an element with a specific ID, and then use the innerHTML property to change the content of that element.
+
+Here is an example of how you might use the DOM to change the text of a paragraph element:
+
+```js
+const p = document.getElementById("my-paragraph");
+p.innerHTML = "Hello, world!";
+```
+
+This would change the text of the paragraph element with the ID "my-paragraph" to "Hello, world!".
+
+### Accessing and modifying DOM elements
+
+To access and modify DOM elements, you can use JavaScript to select elements using methods such as document.getElementById(), document.getElementsByClassName(), and document.querySelectorAll().
+
+Here are a few examples of how you might use these methods:
+```js
+// Get an element with a specific ID
+const element = document.getElementById("my-element");
+
+// Get all elements with a specific class name
+const elements = document.getElementsByClassName("my-class");
+
+// Get all elements that match a CSS selector
+const elements = document.querySelectorAll(".my-class > p");
+
+```
+
+Once you have selected an element or a group of elements, you can use various properties and methods to access and modify the element. For example, you can use the innerHTML property to get or set the HTML content of an element, or the style property to get or set the CSS styles of an element.
+
+Here are a few examples of how you might use these properties and methods:
+
+```js
+// Get the HTML content of an element
+const html = element.innerHTML;
+
+// Set the HTML content of an element
+element.innerHTML = "<p>Hello, world!</p>";
+
+// Get the CSS styles of an element
+const styles = element.style;
+
+// Set a CSS style of an element
+element.style.color = "red";
+```
+
+These are just a few examples of how you can access and modify DOM elements using JavaScript.
+

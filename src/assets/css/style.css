@@ -32,16 +32,13 @@ body {
 }
 
 section.sidebar {
-    /* background: #3403e2; */
-    /* background: #1b191f; */
     background: #000b70;
     padding: 1rem;
     width: 20rem;
-    min-height: 100vh;
+    height: 100vh;
     position: fixed;
-    /* z-index: 10; */
-    margin-right: 20rem;
-    /* display: block; */
+  
+
   }
 
   section.sidebar small {
@@ -59,6 +56,12 @@ section.sidebar {
 
   section.sidebar nav {
     margin-top: 2rem;
+
+    height:80vh;
+    overflow-y: scroll;
+
+    scrollbar-width: none;
+    
   }
 
   section.sidebar nav ul {
@@ -84,11 +87,7 @@ section.sidebar {
   }
 
 
-  pre.astro-code {
-    padding: 1rem;
-    margin:1rem 0;
-    background: #34373c;
-}
+ 
 
 .visible{
   display: block;
@@ -103,10 +102,37 @@ li.sub-nav-item a{
   text-transform: capitalize;
 }
 
+pre.astro-code {
+  padding: 1rem;
+  margin:1rem 0;
+  background: #3a343c;
+  position: relative;
+  border-radius: 10px;;
+  border-top: 0.5px solid teal;
+}
+
+.copy-button{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgb(251, 2, 156);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: white;
+  
+ 
+}
+
 @media only screen and (max-width:980px) {
   .sidebar{
     display: none;
 
+  }
+  main{
+    margin-left:0;
   }
 }
 
@@ -116,11 +142,19 @@ li.sub-nav-item a{
     background-color: black;
     color: white;
   }
+
+  line{
+    stroke: white;
+  }
 }
 /* Style rules for light mode */
 @media (prefers-color-scheme: light) {
   body {
     background-color: white;
     color: black;
+  }
+
+  line{
+    stroke: black;
   }
 }

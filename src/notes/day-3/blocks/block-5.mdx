@@ -1,0 +1,120 @@
+---
+title: "Arrays & Objects"
+day: day-3
+block: block-5
+slug: day-3-block-5
+---
+
+### Arrays
+
+An array is a list-like object in JavaScript that can store multiple values in a single variable. It is similar to a list in Python or an array in Java. You can create an array by enclosing a comma-separated list of values in square brackets ([]). The values in an array are called elements, and each element has a numbered position called an index, which starts at 0.
+
+Here's an example of how you can create an array of integers in JavaScript:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+```
+
+You can access the elements of an array by using their index, like this:
+
+```js
+console.log(numbers[0]);  // Output: 1
+console.log(numbers[1]);  // Output: 2
+console.log(numbers[2]);  // Output: 3
+console.log(numbers[3]);  // Output: 4
+console.log(numbers[4]);  // Output: 5
+```
+
+You can also use the length property to find the length of an array:
+```js
+
+console.log(numbers.length);  // Output: 5
+```
+
+You can use the `push()` method to add an element to the end of an array:
+
+```js
+numbers.push(6);
+console.log(numbers);  // Output: [1, 2, 3, 4, 5, 6]
+```
+
+You can use the `pop()` method to remove the last element of an array:
+
+```js
+numbers.pop();
+console.log(numbers);  // Output: [1, 2, 3, 4, 5]
+```
+
+You can use the `unshift()` method to add an element to the beginning of an array:
+```js
+
+numbers.unshift(0);
+console.log(numbers);  // Output: [0, 1, 2, 3, 4, 5]
+
+```
+
+You can use the `shift()` method to remove the first element of an array:
+
+```js
+numbers.shift();
+console.log(numbers);  // Output: [1, 2, 3, 4, 5]
+```
+
+### Objects
+
+In JavaScript, objects are data types that can store multiple values in a single entity. They are similar to real-world objects, as they have properties (values) and methods (functions) associated with them.
+
+To create an object, we use curly braces {} and define the properties and methods within them. Here is an example of creating a simple object:
+
+```js
+const obj = new Object();
+obj.name = 'John';
+obj.age = 30;
+obj.greeting = function() {
+  return 'Hello, my name is ' + this.name + ' and I am ' + this.age + ' years old.';
+}
+
+//  or
+const person = {
+  name: 'John',
+  age: 30,
+  job: 'software developer',
+  hobbies: ['reading', 'cycling']
+};
+
+// or 
+const obj = {
+  name: 'John',
+  age: 30,
+  greeting: function() {
+    return 'Hello, my name is ' + this.name + ' and I am ' + this.age + ' years old.';
+  }
+};
+
+```
+
+You can access the values of an object by using their keys, like this:
+
+```js
+console.log(person.name);  // Output: 'John'
+console.log(person.age);  // Output: 30
+console.log(person.job);  // Output: 'software developer'
+console.log(person.hobbies);  // Output: ['reading', 'cycling']
+```
+
+You can also use the square bracket notation to access the values of an object, like this:
+
+```js
+console.log(person['name']);  // Output: 'John'
+console.log(person['job']); // Output: 'software developer'
+```
+
+You can also add, update, and delete properties in an object. Here's an example of how you can do that:
+
+```js
+person.email = 'john@example.com';
+console.log(person); // Output: {firstName: "John", lastName: "Doe", age: 30, hobbies: Array(2), email: "john@example.com"}
+
+person.age = 35;
+console.log(person); // Output: {firstName: "John", lastName: "Doe", age: 35,
+```
